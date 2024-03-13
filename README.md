@@ -1,8 +1,10 @@
 # Basic_Food_App MAJOR UPDATE
--> background change color
--> widget may color na
--> added button to increase/decrease your menu order
--> 4 choices na discount
+<br />
+✔ background change color
+✔ widget may color na
+✔ added button to increase/decrease your menu order
+✔ 4 choices na discount
+<br />
 ![image](https://github.com/owenlim225/Basic_Food_App/assets/87555304/c48a1be1-98aa-4159-b1bc-d2d16a3e4fd1)
 
 
