@@ -11,11 +11,11 @@ class FoodKioskApp:
 
         # Left Frame for Customer Name and Order
         left_frame = tk.Frame(root, bd=2, relief=tk.GROOVE)
-        left_frame.pack(side=tk.LEFT, padx=20, pady=20, fill=tk.BOTH, expand=True)
+        left_frame.place(x=20, y=20, width=370, height=460)
 
         # Right Frame for Receipt
         right_frame = tk.Frame(root, bd=2, relief=tk.GROOVE)
-        right_frame.pack(side=tk.RIGHT, padx=10, pady=10, fill=tk.BOTH, expand=True)
+        right_frame.place(x=410, y=20, width=370, height=460)
 
         self.customer_name = tk.StringVar()
         self.order_coffee = tk.IntVar()
@@ -23,30 +23,32 @@ class FoodKioskApp:
         self.order_carbonara = tk.IntVar()
         self.discount = tk.IntVar()
 
-        # Left Frame: Customer Name Entry and Order Checkbuttons
-        tk.Label(left_frame, text="Welcome to:", font=("Arial", 14)).grid(row=0, column=0, pady=5)
-        tk.Label(left_frame, text="TINDAHAN NI SHERWIN", font=("Arial", 14, "bold")).grid(row=0, column=1, pady=5)
+# Left Frame: Customer Name Entry and Order Checkbuttons
+        tk.Label(left_frame, text="Welcome to:", font=("Arial", 14), anchor="center").place(x=10, y=10, width=350)
+        tk.Label(left_frame, text="TINDAHAN NI SHERWIN", font=("Arial", 14, "bold"), anchor="center").place(x=10, y=40, width=350)
         
-        tk.Label(left_frame, text="Customer Name:").grid(row=1, column=0, sticky=tk.W)
-        tk.Entry(left_frame, textvariable=self.customer_name).grid(row=1, column=1, sticky=tk.W, padx=5, pady=5)
         
-        tk.Label(left_frame, text="Order:").grid(row=2, column=0, sticky=tk.W)
-        tk.Checkbutton(left_frame, text="Coffee (₱125.00)", variable=self.order_coffee).grid(row=3, column=0, sticky=tk.W)
-        tk.Checkbutton(left_frame, text="Croissant (₱85.00)", variable=self.order_croissant).grid(row=4, column=0, sticky=tk.W)
-        tk.Checkbutton(left_frame, text="Carbonara (₱250.00)", variable=self.order_carbonara).grid(row=5, column=0, sticky=tk.W)
+        tk.Label(left_frame, text="Customer Name:").place(x=10, y=80)
+        tk.Entry(left_frame, textvariable=self.customer_name).place(x=130, y=80, width=200)
+        
+        tk.Label(left_frame, text="Menu:", anchor="center").place(x=10, y=120, width=350)
+        tk.Checkbutton(left_frame, text="Coffee                    ₱ 125.00", variable=self.order_coffee).place(x=60, y=140)
+        tk.Checkbutton(left_frame, text="Croissant               ₱   85.00", variable=self.order_croissant).place(x=60, y=170)
+        tk.Checkbutton(left_frame, text="Carbonara             ₱ 250.00", variable=self.order_carbonara).place(x=60, y=200)
 
-        tk.Label(left_frame, text="Discount:").grid(row=7, column=0, sticky=tk.W)
-        tk.Radiobutton(left_frame, text="5%", variable=self.discount, value=5).grid(row=8, column=0, sticky=tk.W)
-        tk.Radiobutton(left_frame, text="10%", variable=self.discount, value=10).grid(row=8, column=1, sticky=tk.W)
-        tk.Radiobutton(left_frame, text="15%", variable=self.discount, value=15).grid(row=8, column=2, sticky=tk.W)
+        tk.Label(left_frame, text="Discount:", anchor="center").place(x=10, y=260, width=350)
+        tk.Radiobutton(left_frame, text="0%", variable=self.discount, value=0).place(x=80, y=280)
+        tk.Radiobutton(left_frame, text="5%", variable=self.discount, value=5).place(x=130, y=280)
+        tk.Radiobutton(left_frame, text="10%", variable=self.discount, value=10).place(x=180, y=280)
+        tk.Radiobutton(left_frame, text="15%", variable=self.discount, value=15).place(x=230, y=280)
 
         # Right Frame: Receipt
         self.receipt_text = tk.Text(right_frame, height=30, width=40, state='disabled')
-        self.receipt_text.pack(padx=1, pady=1)
+        self.receipt_text.place(x=5, y=5)
         self.receipt_text.insert(tk.END, "Welcome to Food Kiosk App\n\n")
 
         # Calculate Button
-        tk.Button(left_frame, text="Calculate", command=self.calculate_total).grid(row=10, column=0, columnspan=2, pady=10)
+        tk.Button(left_frame, text="Check out", font=("Arial", 12, "bold"), command=self.calculate_total).place(x=140, y=400)
 
     def calculate_total(self):
         total_cost = 0
@@ -94,8 +96,8 @@ class FoodKioskApp:
         
         receipt += "-" * 40 + "\n"  # Line separator
         receipt += f"\n{'  Total Cost:':<18}{total_cost: >20}\n\n\n\n\n"
-        receipt += f"{'ARIGATHANKS SA PAG BILI SAKIN!':^40}\n\n"
-        receipt += f"{'█ ██ █ ██████ █ █ ███████ █ ████':^40}\n"  # ASCII barcode representation
+        receipt += f"{'ARIGATHANKS SA PAG SHOPPING W/ US!':^40}\n\n"
+        receipt += f"{'█ ██ █  ██████ █ █ ███████ █ ████':^40}\n"  # ASCII barcode representation
         
         # Add date and time
         now = datetime.now()
