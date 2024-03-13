@@ -1,4 +1,22 @@
-# Basic_Food_App
+# Basic_Food_App MAJOR UPDATE
+-> background change color
+-> widget may color na
+-> added button to increase/decrease your menu order
+-> 4 choices na discount
+![image](https://github.com/owenlim225/Basic_Food_App/assets/87555304/c48a1be1-98aa-4159-b1bc-d2d16a3e4fd1)
+
+
+
+
+
+
+
+
+
+
+
+
+
 ![image](https://github.com/owenlim225/Basic_Food_App/assets/87555304/55c3cf4e-ec34-437a-9374-285d523cac94)
 
 inangyan
