@@ -4,7 +4,7 @@
 inangyan
 
 
-UPDATE #1
+UPDATE #1 \n
 ![image](https://github.com/owenlim225/Basic_Food_App/assets/87555304/7db7a3cf-ef56-4575-af62-eb35821ab329)
 
 
