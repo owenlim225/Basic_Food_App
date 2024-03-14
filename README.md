@@ -7,7 +7,8 @@ Create a Food Kiosk app that automatically computes the total cost(label) of the
 
 **-> discount(radiobutton): 5%, 10%, 15%**
 
-**Basic_Food_App MAJOR UPDATE**
+
+# Basic_Food_App MAJOR UPDATE
 
 ✔ background change color
 
