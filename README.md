@@ -1,13 +1,14 @@
 # Basic_Food_App
 Create a Food Kiosk app that automatically computes the total cost(label) of the ordered food. It should accept the following:
 
--> customer name (edit)
+**-> customer name (edit)**
 
--> order(checkbutton): coffee = 125.00, croissant = 75.00, and carbonara = 250.00. 
+**-> order(checkbutton): coffee = 125.00, croissant = 75.00, and carbonara = 250.00.**
 
--> discount(radiobutton): 5%, 10%, 15%
+**-> discount(radiobutton): 5%, 10%, 15%**
 
 **Basic_Food_App MAJOR UPDATE**
+
 ✔ background change color
 
 ✔ widget may color na
