@@ -9,11 +9,11 @@ class FoodKioskApp:
         self.root.resizable(False, False)
         self.root.config(bg="#DC143C")
 
-        # Left Frame for Customer Name and Order
+        # Left Frame to for Customer Name and Order
         self.left_frame = tk.Frame(root, bd=5, relief=tk.GROOVE, bg="#FFE4E1")  # Change background color
         self.left_frame.place(x=20, y=20, width=370, height=460)
 
-        # Right Frame for Receipt
+        # Right Frame to for Receipt
         self.right_frame = tk.Frame(root, bd=0, relief=tk.GROOVE, bg="#FFE4E1")  # Change background color
         self.right_frame.place(x=410, y=20, width=370, height=460)
 
@@ -85,11 +85,15 @@ class FoodKioskApp:
                 elif item_name == "Carbonara":
                     total_cost += quantity.get() * 250.00
 
+
+        #easy to call sa receipt
         discount_percentage = self.discount.get() / 100
         pre_total_cost = total_cost
         total_cost -= total_cost * discount_percentage
         discounted_total_cost = pre_total_cost - total_cost
 
+
+        #Start ng receipt
         customer_name = self.customer_name.get()
         receipt = f"\n{'TINDAHAN NI SHERWIN':^40}\n{'UPHSL Mac Lab u':^40}\n{'Tel: #87000':^40}\n\n{'  Customer Name:':<15}{customer_name:>20}\n\n"
 
@@ -111,24 +115,28 @@ class FoodKioskApp:
         receipt += f"{'  Sub total:':<18}{pre_total_cost: >20}\n"
 
         receipt += "-" * 40 + "\n"  # Line separator
+        
         receipt += f"\n{'  Total Cost:':<18}{total_cost: >20}\n\n\n"
         receipt += f"{'ARIGATHANKS SA PAG SHOPPING W/ US!':^40}\n\n"
         receipt += f"{'█ ██ █  ██████ █ █ ███████ █ ████':^40}\n"  # kunyare bar code
-
-        # Add date and time
+        
+        # Add date and time sa dulo ng receipt
         now = datetime.now()
         date_time = now.strftime("%Y-%m-%d %H:%M:%S")
         receipt += f"{date_time:^40}\n\n"
-
         receipt += f"{'*** CUSTOMER COPY ***':^40}"
+
+
 
         # Enable receipt_text to insert
         self.receipt_text.config(state='normal')
         self.receipt_text.delete(1.0, tk.END)
         self.receipt_text.insert(tk.END, receipt)
+        
         # Disable receipt_text to make it uneditable
         self.receipt_text.config(state='disabled')
 
+    #price ng menu
     def get_item_price(self, item_name):
         if item_name == "Coffee":
             return 125.00
@@ -137,6 +145,8 @@ class FoodKioskApp:
         elif item_name == "Carbonara":
             return 250.00
 
+
+    #Para iba iba kulay ng backgruond
     def change_bg_color(self):
         colors = ['#DC143C', '#FFA500', '#00FFFF', '#FF69B4', '#00FF7F', '#FFD700']  # List of colors to cycle through
         self.root.config(bg=colors[0])  # Initial background color
