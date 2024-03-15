@@ -31,7 +31,7 @@ Create a Food Kiosk app that automatically computes the total cost(label) of the
 
 
 
-# OG output
+# FIRST output
 ![image](https://github.com/owenlim225/Basic_Food_App/assets/87555304/55c3cf4e-ec34-437a-9374-285d523cac94)
 
 inangyan
